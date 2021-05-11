@@ -1,5 +1,6 @@
 <?php
 session_start();
+
    include("connection.php");
    include("functions.php");
 
@@ -10,7 +11,15 @@ session_start();
 
       if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
           //save to database
-          $quey = "insert into user () values()"
+          $user_id = random_num(20);
+
+          $pass = password_hash($password, PASSWORD_DEFAULT);
+
+          $query = "insert into users (user_id, user_name, password) values('$user_id', '$user_name', '$pass')";
+          mysqli_query($con, $query);
+         // header("Location: login.php");
+          //die;
+
       }
       else{
           echo "Please enter valid information";
