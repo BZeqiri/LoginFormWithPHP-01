@@ -10,7 +10,7 @@ session_start();
 
       if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
           //save to database
-          $quey = "insert into user () values()"
+          $quey = "insert into user () values()"//vazhdim
       }
       else{
           echo "Please enter valid information";
