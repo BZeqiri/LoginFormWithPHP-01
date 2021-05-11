@@ -13,9 +13,7 @@ session_start();
           //save to database
           $user_id = random_num(20);
 
-          $pass = password_hash($password, PASSWORD_DEFAULT);
-
-          $query = "insert into users (user_id, user_name, password) values('$user_id', '$user_name', '$pass')";
+          $query = "insert into users (user_id, user_name, password) values('$user_id', '$user_name', '$password')";
           mysqli_query($con, $query);
          header("Location: login.php");
           die;
@@ -58,21 +56,25 @@ session_start();
                width: 400px;
                height: 190px;
                padding: 20px;
+               box-shadow: 1px 1px 3px 3px grey;
            }
-           #su{
-               margin-left: 325px;
-   
+           #register-login{
+               margin-left: 343px;
+               text-decoration: none;
+               border: 1px solid green;
+               border-radius: 5px;
+               padding: 8px;
+               color: black;
            }
           
-           
         </style>
         <div id="box">
             <form method="POST">
-                <div style="font-size:25px; text-align:center; color:aliceblue; ">Register</div>
-                <input id="text" type="text" name="user_name"><br>
-                <input id="text" type="password" name="password"><br><br>
+                <div style="font-size:25px;text-align:center; color:aliceblue; ">Register</div>
+                <input id="text" placeholder="emri dhe mbiemri" type="text" name="user_name"><br>
+                <input id="text" placeholder="password"type="password" name="password"><br><br>
                 <input id="button" type="submit" value="Register"><br><br>
-                <a id="su"  href="login.php">Login</a>
+                <a id="register-login"  href="login.php">Login</a>
             </form>
 
         </div>
